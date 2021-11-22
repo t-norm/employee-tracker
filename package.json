@@ -1,0 +1,25 @@
+{
+  "name": "module-12---employee-tracker",
+  "version": "1.0.0",
+  "description": "An example content management system (CMS) made to simulate an employers ability to track and manage employees. This project was made for educational purposes and is meant to showcase backend development skills. Skills showcased are mainly Node.js, node packages, databases, and SQL. The resulting project will be a command-line application that would allow an employer to add, edit, and update employees, roles, and departments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t-norm/employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t-norm/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/t-norm/employee-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.3"
+  }
+}

@@ -1,20 +1,18 @@
 # <h1 align="center">Employee Tracker</h1>
 
-<p align="center"><img src="https://img.shields.io/badge/License-MIT-blue?style=plastic" /></p>
+<p align="center"><img src="https://img.shields.io/badge/License-MIT-important?style=plastic" /></p>
 <p align="center">
     <img src="https://img.shields.io/badge/Skillset-Backend%20Dev-blue?style=plastic" />
     <img src="https://img.shields.io/badge/Skillset-Content%20Management%20Systems-blue?style=plastic" />
-    <img src="https://img.shields.io/badge/Skillset-Servers-blue?style=plastic" />
     <img src="https://img.shields.io/badge/Skillset-Databases-blue?style=plastic" />
 </p>
 <p align="center">
     <img src="https://img.shields.io/badge/Made%20With-SQL-success?style=plastic" />
-    <img src="https://img.shields.io/badge/Made%20With-Express.js-success?style=plastic" />
     <img src="https://img.shields.io/badge/Made%20With-JavaScript-success?style=plastic" />
 </p>
 
 # Description:
-An example content management system (CMS) made to simulate an employers ability to track and manage employees. This project was made for educational purposes and is meant to showcase backend development skills. Skills showcased are mainly Node.js, node packages, servers, databases, and SQL. The resulting project will be a command-line application that would allow an employer to add, edit, and update employees, roles, and departments.
+An example content management system (CMS) made to simulate an employers ability to track and manage employees. This project was made for educational purposes and is meant to showcase backend development skills. Skills showcased are mainly Node.js, node packages, databases, and SQL. The resulting project will be a command-line application that would allow an employer to add, edit, and update employees, roles, and departments.
 
 # Table of Contents:
 - [Description](#description)
