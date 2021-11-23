@@ -3,14 +3,39 @@ const consoleTable = require('console.table');
 const db = require('./db/connection');
 
 const promptUser = async () => {
-    const userInput = await inquirer.prompt([
+    console.log(`
+        ===========================
+        Welcome to Employee Tracker
+        ===========================
+    `);
+    return inquirer.prompt([
         {
-            type: "input",
-            name: "title",
-            message: "Type a thing: ",
+            type: "list",
+            name: "viewOrUpdate",
+            message: "What information would you like to view or update?",
+            choices: [
+                "View all departments",
+                "View all roles",
+                "View all employees",
+                "View employees by department",
+                "View employees by manager",
+                "View department budget info",
+                "Add a new department",
+                "Add a new role",
+                "Add a new employee",
+                "Update an employee's info",
+                "Delete a department, role, or employee",
+                "Quit"
+            ]
         }
-    ]);
-    return userInput;
+    ]).then(userInput => {
+        switch (userInput.viewOrUpdate) {
+            case "Quit":
+                db.end();
+                console.log("You have been disconnected from the businessInfo database");
+                break;
+        }
+    });
 };
 
 const init = () => {
