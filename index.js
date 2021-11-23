@@ -1,13 +1,8 @@
 const inquirer = require('inquirer');
-const consoleTable = require('console.table');
 const db = require('./db/connection');
+const caseFunction = require('./db/switchCaseFunctions');
 
 const promptUser = async () => {
-    console.log(`
-        ===========================
-        Welcome to Employee Tracker
-        ===========================
-    `);
     return inquirer.prompt([
         {
             type: "list",
@@ -31,52 +26,68 @@ const promptUser = async () => {
     ]).then(userInput => {
         switch (userInput.viewOrUpdate) {
             case "View all departments":
-                viewAllDepartments();
+                caseFunction.viewAllDepartments();
+                promptUser();
                 break;
 
             case "View all roles":
-                viewAllRoles();
+                caseFunction.viewAllRoles();
+                promptUser();
                 break;
 
             case "View all employees":
-                viewAllEmployees();
+                caseFunction.viewAllEmployees();
+                promptUser();
                 break;
 
             case "View employees by department":
-                viewEmployeesByDepartment();
+                caseFunction.viewEmployeesByDepartment();
+                promptUser();
                 break;
 
             case "View employees by manager":
-                viewEmployeesByManager();
+                caseFunction.viewEmployeesByManager();
+                promptUser();
                 break;
 
             case "View department budget info":
-                viewDepartmentBudgetInfo();
+                caseFunction.viewDepartmentBudgetInfo();
+                promptUser();
                 break;
 
             case "Add a new department":
-                addNewDepartment();
+                caseFunction.addNewDepartment();
+                promptUser();
                 break;
 
             case "Add a new role":
-                addNewRole();
+                caseFunction.addNewRole();
+                promptUser();
                 break;
 
             case "Add a new employee":
-                addNewEmployee();
+                caseFunction.addNewEmployee();
+                promptUser();
                 break;
 
             case "Update an employee's info":
-                updateEmployeeInfo();
+                caseFunction.updateEmployeeInfo();
+                promptUser();
                 break;
 
             case "Delete a department, role, or employee":
-                deleteDepartmentRoleEmployee();
+                caseFunction.deleteDepartmentRoleEmployee();
+                promptUser();
                 break;
 
             case "Quit":
                 db.end();
-                console.log("You have been disconnected from the businessInfo database");
+                console.log(`
+                =======================================
+                Disconnected from businessInfo database
+                              Goodbye :)
+                =======================================
+                `);
                 break;
         }
     });
@@ -85,7 +96,12 @@ const promptUser = async () => {
 const init = () => {
     db.connect(err => {
         if (err) throw err;
-        console.log('Connected to businessInfo database.');
+        console.log(`
+        ==================================
+        Connected to businessInfo database
+           Welcome to Employee Tracker
+        ==================================
+        `);
         promptUser();
     });
 };
