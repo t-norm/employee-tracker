@@ -30,6 +30,50 @@ const promptUser = async () => {
         }
     ]).then(userInput => {
         switch (userInput.viewOrUpdate) {
+            case "View all departments":
+                viewAllDepartments();
+                break;
+
+            case "View all roles":
+                viewAllRoles();
+                break;
+
+            case "View all employees":
+                viewAllEmployees();
+                break;
+
+            case "View employees by department":
+                viewEmployeesByDepartment();
+                break;
+
+            case "View employees by manager":
+                viewEmployeesByManager();
+                break;
+
+            case "View department budget info":
+                viewDepartmentBudgetInfo();
+                break;
+
+            case "Add a new department":
+                addNewDepartment();
+                break;
+
+            case "Add a new role":
+                addNewRole();
+                break;
+
+            case "Add a new employee":
+                addNewEmployee();
+                break;
+
+            case "Update an employee's info":
+                updateEmployeeInfo();
+                break;
+
+            case "Delete a department, role, or employee":
+                deleteDepartmentRoleEmployee();
+                break;
+
             case "Quit":
                 db.end();
                 console.log("You have been disconnected from the businessInfo database");
