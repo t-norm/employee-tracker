@@ -3,7 +3,7 @@ const db = require('./db/connection');
 const caseFunction = require('./db/switchCaseFunctions');
 
 const promptUser = async () => {
-    return inquirer.prompt([
+    inquirer.prompt([
         {
             type: "list",
             name: "viewOrUpdate",
@@ -27,57 +27,52 @@ const promptUser = async () => {
         switch (userInput.viewOrUpdate) {
             case "View all departments":
                 caseFunction.viewAllDepartments();
-                promptUser();
+                setTimeout(()=>{promptUser(),1000});
                 break;
 
             case "View all roles":
                 caseFunction.viewAllRoles();
-                promptUser();
+                setTimeout(()=>{promptUser(),1000});
                 break;
 
             case "View all employees":
                 caseFunction.viewAllEmployees();
-                promptUser();
+                setTimeout(()=>{promptUser(),1000});
                 break;
 
             case "View employees by department":
                 caseFunction.viewEmployeesByDepartment();
-                promptUser();
+                setTimeout(()=>{promptUser(),1000});
                 break;
 
             case "View employees by manager":
                 caseFunction.viewEmployeesByManager();
-                promptUser();
+                setTimeout(()=>{promptUser(),1000});
                 break;
 
             case "View department budget info":
                 caseFunction.viewDepartmentBudgetInfo();
-                promptUser();
+                setTimeout(()=>{promptUser(),1000});
                 break;
 
             case "Add a new department":
-                caseFunction.addNewDepartment();
-                promptUser();
+                addNewDepartment();
                 break;
 
             case "Add a new role":
-                caseFunction.addNewRole();
-                promptUser();
+                addNewRole();
                 break;
 
             case "Add a new employee":
                 caseFunction.addNewEmployee();
-                promptUser();
                 break;
 
             case "Update an employee's info":
                 caseFunction.updateEmployeeInfo();
-                promptUser();
                 break;
 
             case "Delete a department, role, or employee":
                 caseFunction.deleteDepartmentRoleEmployee();
-                promptUser();
                 break;
 
             case "Quit":
@@ -104,6 +99,79 @@ const init = () => {
         `);
         promptUser();
     });
+};
+
+const viewAllDepartments = () => {
+    db.query(`SELECT * FROM departments;`, 
+    function(err, res) {
+        if (err) throw err
+        console.table(res);
+    });
+};
+
+const addNewDepartment = () => {
+    inquirer.prompt([
+        {
+          type: 'input', 
+          name: 'addNewDept',
+          message: "Enter new department name: ",
+          validate: addNewDept => {
+            if (addNewDept) {
+                return true;
+            } else {
+                console.log('Please enter a department name');
+                return false;
+            };
+          }
+        }
+    ]).then(answer => {
+            const sql = `INSERT INTO departments (dept_name) VALUES (?)`;
+            db.query(sql, answer.addNewDept, (err, result) => {
+                if (err) throw err;
+                console.log('New department added: ' + answer.addNewDept); 
+            });
+        }).then(() => promptUser());
+};
+
+const addNewRole = () => {
+    viewAllDepartments();
+    inquirer.prompt([
+        {
+            
+        }
+    ]).then(answer => {
+        
+    }).then(() => promptUser());
+};
+
+const addNewEmployee = () => {
+    inquirer.prompt([
+        {
+
+        }
+    ]).then(answer => {
+
+    }).then(() => promptUser());
+};
+
+const updateEmployeeInfo = () => {
+    inquirer.prompt([
+        {
+
+        }
+    ]).then(answer => {
+
+    }).then(() => promptUser());
+};
+
+const deleteDepartmentRoleEmployee = () => {
+    inquirer.prompt([
+        {
+
+        }
+    ]).then(answer => {
+
+    }).then(() => promptUser());
 };
 
 init();

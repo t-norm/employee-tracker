@@ -1,18 +1,18 @@
 INSERT INTO departments
     (dept_name)
 VALUES
-    ('legal'),
-    ('bus ops'),
-    ('marketing');
+    ('Legal'),
+    ('Bus Ops'),
+    ('Marketing');
 INSERT INTO roles
     (title, salary, dept_id)
 VALUES
-    ('attorney', 99999, 1),
-    ('paralegal', 90000, 1),
-    ('manager', 80000, 2),
-    ('sales rep', 70000, 2),
-    ('marketing lead', 60000, 3),
-    ('marketing rep', 50000, 3);
+    ('Attorney', 99999, 1),
+    ('Paralegal', 90000, 1),
+    ('Manager', 80000, 2),
+    ('Sales Rep', 70000, 2),
+    ('Marketing Lead', 60000, 3),
+    ('Marketing Rep', 50000, 3);
 INSERT INTO employees
     (first_name, last_name, role_id, manager_id)
 VALUES

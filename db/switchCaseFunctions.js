@@ -1,4 +1,5 @@
-const consoleTable = require('console.table');
+require('console.table');
+const inquirer = require('inquirer');
 const db = require('./connection');
 
 module.exports = {
@@ -70,20 +71,5 @@ module.exports = {
             if (err) throw err
             console.table(res);
         });
-    },
-    addNewDepartment: function() {
-     
-    },
-    addNewRole: function() {
-        
-    },
-    addNewEmployee: function() {
-        
-    },
-    updateEmployeeInfo: function() {
-        
-    },
-    deleteDepartmentRoleEmployee: function() {
-        
     }
 };
