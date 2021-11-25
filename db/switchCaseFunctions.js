@@ -1,5 +1,4 @@
 require('console.table');
-const inquirer = require('inquirer');
 const db = require('./connection');
 
 module.exports = {

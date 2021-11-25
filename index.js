@@ -64,15 +64,15 @@ const promptUser = async () => {
                 break;
 
             case "Add a new employee":
-                caseFunction.addNewEmployee();
+                addNewEmployee();
                 break;
 
             case "Update an employee's info":
-                caseFunction.updateEmployeeInfo();
+                updateEmployeeInfo();
                 break;
 
             case "Delete a department, role, or employee":
-                caseFunction.deleteDepartmentRoleEmployee();
+                deleteDepartmentRoleEmployee();
                 break;
 
             case "Quit":
