@@ -24,16 +24,20 @@ An example content management system (CMS) made to simulate an employers ability
 - [Questions](#questions)
 
 # Installation:
-TO BE UPDATED IN THE FUTURE
+You may clone this repo if you wish; however, this package doesn't neccessarily have any real function. Rather, it showcases ability to use SQL and you can see that skill applied by watching the demo video posted in the usage section. If you do clone this repo, you will need your own sql db set up on your local machine, and you will also need to change the password located in db/connection.js to be your root user password on your sql db. Furthermore, you will have to have node.js, inquirer, mysql2, and console.table as npm prerequisites.
+
+It is recommended you view the source code inb this repo and the demo video to get the gist of the intent of this repo.
 
 # Usage:
-TO BE UPDATED IN THE FUTURE
+Demo video: https://watch.screencastify.com/v/gXnsEOoovVOnHlaCyxnY
+
+This repo itself has no real intended use, rather, it is meant as a showcase of SQL skill. You can see this skillset on display by watching the demo video or poking around the repo.
 
 # Contribution:
-This project was made as a showcase of backend dev skills. Feel free to clone the code within to test out the fucntionality of the overall package.
+This project was made as a showcase of backend dev skills and SQL. Feel free to clone the code within to test out the fucntionality of the overall package.
 
 # Tests:
-TO BE UPDATED IN THE FUTURE
+N/A
 
 # License:
 
