@@ -188,14 +188,30 @@ const addNewRole = () => {
 const addNewEmployee = () => {
     inquirer.prompt([
         {
-        type: 'input',
-        name: 'firstName',
-        message: "Enter employees first name: "
+            type: 'input',
+            name: 'firstName',
+            message: "Enter employees first name: ",
+            validate: firstName => {
+                if (firstName) {
+                    return true;
+                } else {
+                    console.log('Please enter a first name');
+                    return false;
+                };
+            }
         },
         {
             type: 'input',
             name: 'lastName',
-            message: "Enter employees last name: "
+            message: "Enter employees last name: ",
+            validate: lastName => {
+                if (lastName) {
+                    return true;
+                } else {
+                    console.log('Please enter a last name');
+                    return false;
+                };
+            }
         },
         {
             type: 'list',
